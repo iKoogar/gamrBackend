@@ -1,4 +1,5 @@
 from Data.User import User
+import json
 from Data.Game import Game
 from Data.Connection import Connection
 
@@ -19,7 +20,7 @@ def createUser(nam: str, eml: str, pwd: str) -> User:
 def findUserByEmail(email: str) -> User:
     user = User.objects(email=email).first()
     print("found user : ", user.name)
-    
+
     return user
 
 
@@ -36,5 +37,6 @@ def addUser(nam: str, eml: str, pwd: str) -> User:
 def getAllUsers():
     users = User.objects()
 
-    return users.tojson()
+    return users.to_json()
+
 
