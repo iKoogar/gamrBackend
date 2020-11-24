@@ -6,19 +6,28 @@ from Data.Connection import Connection
 # User stuff ==========================================================================================================
 
 
-def createUser(name: str, email: str, pwd: str) -> User:
+def createUser(nam: str, eml: str, pwd: str) -> User:
     user = User()
-    user.name = name
-    user.email = email
+    user.name = nam
+    user.email = eml
     user.password = pwd
 
     user.save()
     return user
 
 
-def find_user_by_email(email: str) -> User:
+def findUserByEmail(email: str) -> User:
     user = User.objects(email=email).first()
     print("found user : ", user.name)
     return user
 
+
+def addUser(nam: str, eml: str, pwd: str) -> User:
+    user = User()
+    user.name = nam
+    user.email = eml
+    user.password = pwd
+
+    user.save()
+    return user
 

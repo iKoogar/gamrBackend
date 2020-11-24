@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+import Services.data_service as svc
+
 
 app = FastAPI()
 
@@ -6,3 +8,6 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
+@app.post("/newUserTest/{name}")
+async def newUser(nam: str):
+    svc.addUser(nam, "noemail", "nopwd")
