@@ -6,6 +6,8 @@ import Services.fast_api as fa
 import uvicorn
 import json
 
+app = FastAPI()
+
 
 def read_secrets():
     with open("secrets.json", "r") as read_file:
@@ -17,7 +19,7 @@ def main():
     secrets = read_secrets()
     mongo_setup.global_init(secrets)
 
-    app = FastAPI()
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
     #svc.createUser("poog", "poog@gamr.com", "yeet")
