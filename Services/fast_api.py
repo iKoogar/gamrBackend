@@ -14,4 +14,4 @@ async def newUser(nam: str):
 
 @app.get("/allUsers")
 async def getAllUsers():
-    svc.getAllUsers()
+    return svc.getAllUsers()

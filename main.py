@@ -20,7 +20,7 @@ def main():
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
     #svc.createUser("poog", "poog@gamr.com", "yeet")
-    svc.find_user_by_email("poog@gamr.com")
+    svc.findUserByEmail("poog@gamr.com")
 
 
 if __name__ == '__main__':
