@@ -11,3 +11,7 @@ async def root():
 @app.post("/newUserTest/{name}")
 async def newUser(nam: str):
     svc.addUser(nam, "noemail", "nopwd")
+
+@app.get("/allUsers")
+async def getAllUsers():
+    svc.getAllUsers()

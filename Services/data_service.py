@@ -19,6 +19,7 @@ def createUser(nam: str, eml: str, pwd: str) -> User:
 def findUserByEmail(email: str) -> User:
     user = User.objects(email=email).first()
     print("found user : ", user.name)
+    
     return user
 
 
@@ -30,4 +31,10 @@ def addUser(nam: str, eml: str, pwd: str) -> User:
 
     user.save()
     return user
+
+
+def getAllUsers():
+    users = User.objects()
+
+    return users.tojson()
 
