@@ -16,11 +16,13 @@ def main():
     secrets = read_secrets()
     mongo_setup.global_init(secrets)
 
+    #svc.createUser("poog", "poog@gamr.com", "yeet")
+    print(svc.findUserByEmail("poog@gamr.com").name)
+
+
     app = fa.app
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
-    #svc.createUser("poog", "poog@gamr.com", "yeet")
-    svc.findUserByEmail("poog@gamr.com")
 
 
 if __name__ == '__main__':

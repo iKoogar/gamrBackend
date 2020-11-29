@@ -14,6 +14,7 @@ class User(Document):
     biography = StringField()
     creation_date = DateTimeField(default=datetime.datetime.now)
     friends = ListField(ReferenceField('self'))  # idk
+    blocked = ListField(ReferenceField('self'))  # idk
     matchSuggestions = ListField(ReferenceField('self'))  # idk
 
 
