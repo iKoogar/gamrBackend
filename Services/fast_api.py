@@ -22,4 +22,4 @@ async def getAllUsers():
 
 @app.get("/userByEmail/{usr}")
 async def userByEmail(usr):
-    return svc.findUserByEmail(usr)
+    return svc.findUserByEmail(usr).to_json()
