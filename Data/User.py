@@ -8,14 +8,14 @@ class User(Document):
     name = StringField(required=True)
     email = StringField(required=True)
     password = StringField(required=True)
-    profilePicture = ImageField()
-    commPrefs = ListField(BooleanField())
-    favoriteGames = ListField(ReferenceField(Game))
+    profile_picture = ImageField()
+    comm_prefs = ListField(BooleanField())
+    favorite_games = ListField(ReferenceField(Game))
     biography = StringField()
     creation_date = DateTimeField(default=datetime.datetime.now)
     friends = ListField(ReferenceField('self'))  # idk
     blocked = ListField(ReferenceField('self'))  # idk
-    matchSuggestions = ListField(ReferenceField('self'))  # idk
+    match_suggestions = ListField(ReferenceField('self'))  # idk
 
 
     meta = {

@@ -3,8 +3,8 @@ from mongoengine import *
 
 class Game(Document):
     name = StringField()
-    isMultiplayer = BooleanField()
-    playersMatched = IntField()
+    is_multiplayer = BooleanField()
+    players_matched = IntField()
 
 
     meta = {
