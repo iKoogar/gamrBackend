@@ -1,3 +1,4 @@
+import mongoengine
 from Data.User import User
 import json
 from Data.Game import Game
@@ -6,22 +7,25 @@ from Data.Connection import Connection
 
 # User stuff ==========================================================================================================
 
-
-def createUser(nam: str, eml: str, pwd: str) -> User:
+# takes a string for the email of the user to search for
+# returns a tuple of the user and a boolean indicating if a user was found or not
+def findUserByEmail(email: str):
     user = User()
-    user.name = nam
-    user.email = eml
-    user.password = pwd
+    found = False
+    if User.objects(email=email).count() > 0:
+        user = User.objects(email=email).first()
+        found = True
+    return user, found
 
-    user.save()
-    return user
+
+def deleteUserByEmail(eml: str):
+    print(eml)
+    user, found = findUserByEmail(eml)
+    if found:
+        print("found user with email :", eml,": deleting")
+        user.delete()
 
 
-def findUserByEmail(email: str) -> User:
-    user = User.objects(email=email).first()
-    print("found user : ", user.name)
-
-    return user
 
 
 def addUser(nam: str, eml: str, pwd: str) -> User:
@@ -29,7 +33,7 @@ def addUser(nam: str, eml: str, pwd: str) -> User:
     user.name = nam
     user.email = eml
     user.password = pwd
-
+    # should check if email exists already
     user.save()
     return user
 
@@ -39,10 +43,4 @@ def getAllUsers():
 
     return users.to_json()
 
-
-# User stuff ==========================================================================================================
-
-
-
-
-
+# Game stuff ==========================================================================================================
