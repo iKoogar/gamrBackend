@@ -8,7 +8,7 @@ def testAddAndDeleteUser(eml: str) -> bool:
     # check if user was added to database
     user, found = svc.findUserByEmail(eml)
     if not (found and user.email == eml):
-        print("user not found")
+        print("ERROR: user not found")
         return False
 
     # delete the user from the database
@@ -17,7 +17,7 @@ def testAddAndDeleteUser(eml: str) -> bool:
     # check if user was removed from database
     user, found = svc.findUserByEmail(eml)
     if found:
-        print("user not removed")
+        print("ERROR: user not removed")
         return False
 
     return True
@@ -25,3 +25,5 @@ def testAddAndDeleteUser(eml: str) -> bool:
 
 def runTests():
     return testAddAndDeleteUser("test")
+
+

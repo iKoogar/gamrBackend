@@ -19,7 +19,6 @@ def findUserByEmail(email: str):
 
 
 def deleteUserByEmail(eml: str):
-    print(eml)
     user, found = findUserByEmail(eml)
     if found:
         print("found user with email :", eml,": deleting")

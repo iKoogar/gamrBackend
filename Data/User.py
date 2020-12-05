@@ -9,7 +9,7 @@ class User(Document):
     email = StringField(required=True)
     password = StringField(required=True)
     profile_picture = ImageField()
-    comm_prefs = ListField(BooleanField())
+    comm_prefs = ListField(StringField())
     favorite_games = ListField(ReferenceField(Game))
     biography = StringField()
     creation_date = DateTimeField(default=datetime.datetime.now)

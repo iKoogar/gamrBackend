@@ -19,7 +19,7 @@ def main():
     print(runTests())
 
     # svc.createUser("poog", "poog@gamr.com", "yeet")
-    print(svc.findUserByEmail("poog@gamr.com")[0].name)
+    # print(svc.findUserByEmail("poog@gamr.com")[0].name)
 
     app = fa.app
     uvicorn.run(app, host="0.0.0.0", port=8000)
