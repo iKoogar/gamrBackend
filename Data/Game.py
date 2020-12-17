@@ -1,3 +1,8 @@
+"""
+Game.py
+Game class for games that people play
+"""
+
 from mongoengine import *
 
 

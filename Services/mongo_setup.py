@@ -1,3 +1,8 @@
+"""
+mongo_setup.py
+connects to a remote mongodb server using credentials within a dictionary called 'secrets'
+"""
+
 import mongoengine
 
 def global_init(secrets):

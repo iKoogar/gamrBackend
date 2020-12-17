@@ -1,3 +1,8 @@
+"""
+Connection.py
+contains the Connection class that is created each time a user creates a connection with another user with a game in common
+"""
+
 from mongoengine import *
 from Data.User import User
 from Data.Game import Game

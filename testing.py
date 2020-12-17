@@ -1,3 +1,8 @@
+"""
+testing.py
+small testing suite for gamr
+"""
+
 import Services.data_service as svc
 
 
